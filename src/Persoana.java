@@ -1,9 +1,9 @@
 import java.util.Scanner;
 
 public abstract class Persoana {
-    static int nrPersoane = 0;
-    int id;
-    String cif, nume, rezidenta;
+    private static int nrPersoane = 0;
+    private int id;
+    private String cif, nume, rezidenta;
 
     public String getNume() {
         return nume;

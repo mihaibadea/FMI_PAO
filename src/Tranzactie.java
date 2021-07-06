@@ -2,11 +2,11 @@ import java.time.LocalDate;
 import java.util.Scanner;
 
 public class Tranzactie {
-    int idDebitor, idCreditor;
+    private int idDebitor, idCreditor;
 
-    int valoare;
+    private int valoare;
 
-    LocalDate moment;
+    private LocalDate moment;
 
     public int getIdCreditor() {
         return idCreditor;

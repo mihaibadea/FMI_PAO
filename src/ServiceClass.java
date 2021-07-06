@@ -24,7 +24,7 @@ public class ServiceClass {
 
     public Persoana PersDupaID(int idp){
         for(Persoana p : persoane){
-            if(p.id == idp) {
+            if(p.getId() == idp) {
                 return p;
             }
         }
@@ -33,7 +33,7 @@ public class ServiceClass {
 
     public Cont ContDupaID(int idc){
         for(Cont c : conturi){
-            if(c.id == idc){
+            if(c.getId() == idc){
                 return c;
             }
         }
@@ -71,15 +71,15 @@ public class ServiceClass {
     }
 
     public void GenerareExtras(int idc) throws IOException {
-        System.out.println("Sold actual: " + ContDupaID(idc).sold + " lei.");
+        System.out.println("Sold actual: " + ContDupaID(idc).getSold() + " lei.");
         Collections.sort(tranzactii, new ComparTranzactiiDupaData());
         System.out.println("Tranzactii:");
         for(Tranzactie t : tranzactii){
             if(t.getIdCreditor() == idc){
-                System.out.println("+" + t.getValoare() + " lei la data de " + t.moment);
+                System.out.println("+" + t.getValoare() + " lei la data de " + t.getMoment());
             }
             else if(t.getIdDebitor() == idc){
-                System.out.println("-" + t.getValoare() + " lei la data de " + t.moment);
+                System.out.println("-" + t.getValoare() + " lei la data de " + t.getMoment());
             }
         }
         c.audit("GenerareExtras");
@@ -92,12 +92,12 @@ public class ServiceClass {
 
     public void SchimbValutar(int suma, String idv, boolean amlei) throws IOException {
         for(Valuta v : monede){
-            if(v.identificator.equals(idv)){
+            if(v.getIdentificator().equals(idv)){
                 if(amlei){
-                    System.out.println("Banca a primit " + suma + " lei si a dat " + suma / v.curs_vanzare + " " + idv + ".");
+                    System.out.println("Banca a primit " + suma + " lei si a dat " + suma / v.getCurs_vanzare() + " " + idv + ".");
                 }
                 else{
-                    System.out.println("Banca a primit " + suma + idv + " si a dat " + suma * v.curs_cumparare + " lei.");
+                    System.out.println("Banca a primit " + suma + idv + " si a dat " + suma * v.getCurs_cumparare() + " lei.");
                 }
             }
         }
@@ -135,7 +135,7 @@ public class ServiceClass {
         boolean sepoate = true;
 
         for(Cont c : conturi){
-            if (c.idPersoana == id && c.sold < 0) {
+            if (c.getidPersoana() == id && c.getSold() < 0) {
                 sepoate = false;
                 break;
             }
@@ -144,7 +144,7 @@ public class ServiceClass {
 
         carduri.removeIf(c -> c.getIdTitular() == id);
 
-        conturi.removeIf(c -> c.getidPersoana() == id && c.sold > 0);
+        conturi.removeIf(c -> c.getidPersoana() == id && c.getSold() > 0);
 
         boolean finalSepoate = sepoate;
 

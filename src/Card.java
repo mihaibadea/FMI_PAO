@@ -2,12 +2,12 @@ import java.time.LocalDate;
 import java.util.Scanner;
 
 public class Card {
-    static int nrCarduri = 0;
-    int idCard;
-    int idTitular;
-    int idCont;
+    private static int nrCarduri = 0;
+    private int idCard;
+    private int idTitular;
+    private int idCont;
 
-    LocalDate dataexpirare;
+    private LocalDate dataexpirare;
 
     public int getIdTitular() {
         return idTitular;

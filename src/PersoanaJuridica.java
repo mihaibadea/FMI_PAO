@@ -1,8 +1,8 @@
 import java.util.Scanner;
 
 public class PersoanaJuridica extends Persoana{
-    String sediu;
-    int capitalSocial;
+    private String sediu;
+    private int capitalSocial;
 
     public String getSediu() {
         return sediu;

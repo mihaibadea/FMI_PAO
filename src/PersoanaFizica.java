@@ -1,8 +1,8 @@
 import java.util.Scanner;
 
 public class PersoanaFizica extends Persoana{
-    String stareCivila;
-    String cetatenie;
+    private String stareCivila;
+    private String cetatenie;
 
     public String getCetatenie() {
         return cetatenie;

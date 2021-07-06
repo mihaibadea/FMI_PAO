@@ -1,10 +1,10 @@
 import java.util.Scanner;
 
 public class Cont {
-    static int nrConturi = 0;
-    int id;
-    int idPersoana;
-    int sold;
+    private static int nrConturi = 0;
+    private int id;
+    private int idPersoana;
+    private int sold;
 
     public int getId() {
         return id;

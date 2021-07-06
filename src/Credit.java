@@ -3,10 +3,10 @@ import java.util.Scanner;
 
 public class Credit {
 
-    int idBeneficiar;
-    int valoare;
-    double dobanda;
-    LocalDate scadenta;
+    private int idBeneficiar;
+    private int valoare;
+    private double dobanda;
+    private LocalDate scadenta;
 
     public Credit(){
         Scanner read = new Scanner(System.in);

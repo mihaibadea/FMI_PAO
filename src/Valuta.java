@@ -1,8 +1,32 @@
 import java.util.Scanner;
 
 public class Valuta {
-    String identificator;
-    double curs_vanzare, curs_cumparare;
+    private String identificator;
+    private double curs_vanzare, curs_cumparare;
+
+    public String getIdentificator() {
+        return identificator;
+    }
+
+    public void setIdentificator(String identificator) {
+        this.identificator = identificator;
+    }
+
+    public double getCurs_cumparare() {
+        return curs_cumparare;
+    }
+
+    public void setCurs_cumparare(double curs_cumparare) {
+        this.curs_cumparare = curs_cumparare;
+    }
+
+    public double getCurs_vanzare() {
+        return curs_vanzare;
+    }
+
+    public void setCurs_vanzare(double curs_vanzare) {
+        this.curs_vanzare = curs_vanzare;
+    }
 
     public Valuta(){
         Scanner read = new Scanner(System.in);
