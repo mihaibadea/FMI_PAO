@@ -1,7 +1,11 @@
+import db.SetData;
+
 import java.io.IOException;
 
 public class Main{
     public static void main(String[] args) throws IOException {
+        SetData sd = new SetData();
+        sd.initial();
         ServiceClass s = ServiceClass.getInstance();
         s.citire();
         s.AcordareCredit(2,5000,4.3, 2);
